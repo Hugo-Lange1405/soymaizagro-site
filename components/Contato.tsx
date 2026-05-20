@@ -185,13 +185,13 @@ export default function Contato() {
                   className={inputClass}
                   style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}
                 >
-                  <option value="">Selecione o assunto</option>
-                  <option>Comercialização de Soja</option>
-                  <option>Comercialização de Milho</option>
-                  <option>Comercialização de Sorgo</option>
-                  <option>Receber Boletim de Mercado</option>
-                  <option>Análise de Mercado</option>
-                  <option>Outros</option>
+                  <option className="text-black">Selecione o assunto</option>
+                  <option className="text-black">Comercialização de Soja</option>
+                  <option className="text-black">Comercialização de Milho</option>
+                  <option className="text-black">Comercialização de Sorgo</option>
+                  <option className="text-black">Receber Boletim de Mercado</option>
+                  <option className="text-black">Análise de Mercado</option>
+                  <option className="text-black">Outros</option>
                 </select>
               </div>
 
