@@ -69,7 +69,7 @@ export default function Home() {
                   marginBottom: '2.4rem',
                 }}
               >
-                Corretora de Grãos · Est. 1991
+                Simão Corretora · Est. 1991
               </p>
 
               {/* H1 */}
