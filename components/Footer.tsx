@@ -25,13 +25,13 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <Image
-  src="/images/logo-soymaiz-final.png"
+  src="/images/soymaiz-logo-chat.png"
   alt="SoyMaiz Agro"
   width={320}
   height={120}
   className="object-contain object-left mb-5"
   style={{
-    height: '120px',
+    height: '150px',
     width: 'auto',
   }}
 />
