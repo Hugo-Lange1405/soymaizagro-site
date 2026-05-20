@@ -72,13 +72,13 @@ export default function Navbar() {
           }}
         >
           <Image
-            src="/images/logo-soymaiz-final.png"
+            src="/images/soymaiz-logo-chat.png"
             alt="SoyMaiz Agro"
             width={320}
             height={120}
             style={{
               objectFit: 'contain',
-              height: '62px',
+              height: '100px',
               width: 'auto',
             }}  
             priority
