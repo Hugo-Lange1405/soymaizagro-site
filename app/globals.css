@@ -1,0 +1,335 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Fonts imported via layout.tsx ── */
+
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-impact:  'Bebas Neue', 'Arial Black', sans-serif;
+  --green:        #3BAA2A;
+  --green-dark:   #2D8A20;
+  --bg-dark:      #0E1A0C;
+  --bg-mid:       #142110;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: #FAFAF8;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 3px; }
+::-webkit-scrollbar-track  { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb  { background: var(--green); border-radius: 2px; }
+
+/* ── Ticker animation ── */
+.ticker-track {
+  display: flex;
+  gap: 4rem;
+  width: max-content;
+  animation: ticker 34s linear infinite;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Hero vertical lines ── */
+.hero-vline {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(59,170,42,0.1), transparent);
+  opacity: 0;
+  animation: vlineIn 2s ease forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes vlineIn {
+  to { opacity: 1; }
+}
+
+/* ── Hero animations ── */
+.anim-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.anim-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Scroll indicator ── */
+.scroll-bar {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(59,170,42,0.85), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(0.8); }
+  50%       { opacity: 1;   transform: scaleY(1); }
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── Hero background grid ── */
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(59,170,42,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,170,42,0.05) 1px, transparent 1px);
+  background-size: 70px 70px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
+}
+
+/* ── Grain texture ── */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+}
+
+/* ── Navbar desktop ── */
+.nav-desktop-link:hover {
+  color: rgba(250,250,248,0.96) !important;
+}
+
+.nav-cta-btn:hover {
+  color: #FAFAF8 !important;
+  background: #3BAA2A !important;
+  border-color: #3BAA2A !important;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 32px rgba(59,170,42,0.28);
+}
+
+.mobile-nav-item:hover {
+  color: rgba(250,250,248,0.98) !important;
+}
+
+/* ── Hero CTAs ── */
+.hero-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #3BAA2A;
+  color: #FAFAF8;
+  padding: 15px 34px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.hero-cta-primary:hover {
+  background: #2D8A20;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 48px rgba(59,170,42,0.32);
+}
+
+.hero-cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(250,250,248,0.6);
+  padding: 15px 28px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid rgba(250,250,248,0.11);
+  text-decoration: none;
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+}
+
+.hero-cta-ghost:hover {
+  border-color: rgba(250,250,248,0.32);
+  color: rgba(250,250,248,0.9);
+  background: rgba(250,250,248,0.03);
+}
+
+/* ── Service card hover underline ── */
+.svc-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px; width: 0;
+  background: var(--green);
+  transition: width 0.45s ease;
+}
+
+.svc-card:hover::after {
+  width: 100%;
+}
+
+/* ── Insight card left accent ── */
+.mkt-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--green);
+  transform: scaleY(0);
+  transition: transform 0.4s ease;
+  transform-origin: bottom;
+}
+
+.mkt-card:hover::before,
+.mkt-card.featured::before {
+  transform: scaleY(1);
+}
+
+/* ── Chart bars ── */
+.chart-bar {
+  background: linear-gradient(to top, #3BAA2A, rgba(59,170,42,0.22));
+  border-radius: 3px 3px 0 0;
+  width: 28px;
+  height: 0;
+  animation: barGrow 0.9s ease forwards;
+  animation-delay: var(--bar-delay, 0s);
+}
+
+@keyframes barGrow {
+  to { height: var(--bar-height, 60px); }
+}
+
+/* ── Nav logo crossfade ── */
+.logo-white { opacity: 1; transition: opacity 0.4s; }
+.logo-color { opacity: 0; transition: opacity 0.4s; }
+
+nav.scrolled .logo-white { opacity: 0; }
+nav.scrolled .logo-color { opacity: 1; }
+
+/* ── Sobre card top gradient bar ── */
+.sobre-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3BAA2A, transparent);
+}
+
+/* ── Form focus glow ── */
+.form-input:focus {
+  border-color: rgba(59, 170, 42, 0.5);
+  background-color: rgba(59, 170, 42, 0.04);
+  outline: none;
+}
+
+/* ── Channel item hover ── */
+.channel-item:hover {
+  border-color: rgba(59, 170, 42, 0.38);
+  background-color: rgba(59, 170, 42, 0.06);
+  transform: translateX(6px);
+}
+
+/* ── Timeline connector ── */
+.tl-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 15px; top: 32px; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(59,170,42,0.4), rgba(59,170,42,0.06));
+}
+
+/* ── Sobre section ── */
+.sobre-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(59,170,42,0.09);
+}
+
+.sobre-stat-item {
+  padding: 2.8rem 0;
+  border-bottom: 1px solid rgba(59,170,42,0.09);
+}
+
+/* Remove bottom border from last two items (2-col mobile) */
+.sobre-stat-item:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+@media (min-width: 1024px) {
+  .sobre-stat-item {
+    padding: 3rem 2.8rem;
+    border-bottom: none;
+    border-right: 1px solid rgba(59,170,42,0.09);
+  }
+  .sobre-stat-item:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+  .sobre-stat-item:first-child {
+    padding-left: 0;
+  }
+}
+
+.sobre-tl-item {
+  padding-left: 1.6rem;
+  border-left: 1px solid rgba(59,170,42,0.18);
+  position: relative;
+}
+
+.sobre-tl-item::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3BAA2A;
+}
