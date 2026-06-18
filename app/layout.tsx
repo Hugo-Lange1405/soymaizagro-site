@@ -25,30 +25,44 @@ const bebasNeue = Bebas_Neue({
 })
 
 export const metadata: Metadata = {
-  title: 'SoyMaiz Agro — Inteligência em Comercialização de Grãos',
-  description:
-    'Desde 1991, a SoyMaiz Agro conecta produtores rurais às melhores oportunidades de comercialização de soja, milho e sorgo no Brasil.',
-  keywords: [
-    'corretora grãos',
-    'soja',
-    'milho',
-    'sorgo',
-    'comercialização agrícola',
-    'consultoria agro',
-    'Minas Gerais',
-    'Goiás',
-  ],
-  openGraph: {
-    title: 'SoyMaiz Agro — Inteligência em Grãos',
-    description: '35 anos conectando produtores ao mercado global de grãos.',
-    type: 'website',
+  title: {
+    default: 'SoyMaiz Agro — Comercialização de Grãos',
+    template: '%s | SoyMaiz Agro',
   },
 
- icons: {
-  icon: '/images/favicon.png',
-},
+  description:
+    'Consultoria e assessoria em comercialização de soja, milho e sorgo. Desde 1991 conectando produtores rurais às melhores oportunidades de mercado.',
 
+  keywords: [
+    'SoyMaiz Agro',
+    'corretora de grãos',
+    'comercialização de soja',
+    'comercialização de milho',
+    'comercialização de sorgo',
+    'consultoria agro',
+    'mercado de grãos',
+    'Uberlândia',
+    'Minas Gerais',
+    'Goiás',
+    'Distrito Federal',
+    'Piauí',
+  ],
+
+  openGraph: {
+    title: 'SoyMaiz Agro — Comercialização de Grãos',
+    description:
+      'Desde 1991 conectando produtores rurais às melhores oportunidades no mercado de soja, milho e sorgo.',
+    url: 'https://soymaizagro.com.br',
+    siteName: 'SoyMaiz Agro',
+    type: 'website',
+    locale: 'pt_BR',
+  },
+
+  icons: {
+    icon: '/images/favicon.png',
+  },
 }
+
 
 export default function RootLayout({
   children,
