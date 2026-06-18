@@ -43,6 +43,11 @@ export const metadata: Metadata = {
     description: '35 anos conectando produtores ao mercado global de grãos.',
     type: 'website',
   },
+
+ icons: {
+  icon: '/images/favicon.png',
+},
+
 }
 
 export default function RootLayout({
