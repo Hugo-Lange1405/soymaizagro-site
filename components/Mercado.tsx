@@ -98,14 +98,6 @@ export default function Mercado() {
                 e da expectativa pelo relatório WASDE. Nossa análise aponta
                 janelas táticas de venda estratégica.
               </p>
-              <a
-                href="https://wa.me/5534999282714"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-green-brand text-cream text-[0.72rem] font-semibold tracking-[0.12em] uppercase px-6 py-3 rounded-[3px] transition-all duration-300 hover:bg-green-dark hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(59,170,42,0.35)]"
-              >
-                Receber boletim diário
-              </a>
             </div>
 
             {/* Chart */}
