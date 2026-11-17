@@ -124,14 +124,6 @@ export default function Home() {
                 }}
               >
                 <a
-                  href="https://wa.me/5534999282714"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hero-cta-primary"
-                >
-                  Falar com consultor
-                </a>
-                <a
                   href="#sobre"
                   className="hero-cta-ghost"
                 >
