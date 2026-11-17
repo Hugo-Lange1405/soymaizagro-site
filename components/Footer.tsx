@@ -11,7 +11,6 @@ const navLinks = [
 ]
 
 const contactLinks = [
-  { href: 'https://wa.me/5534999282714', label: '(34) 99928-2714', external: true },
   { href: 'mailto:cristian.lange@soymaizagro.com.br', label: 'cristian.lange@soymaizagro.com.br', external: false },
   { href: 'mailto:ssimaocorretora@gmail.com', label: 'ssimaocorretora@gmail.com', external: false },
   { href: null, label: 'Uberlândia — MG', external: false },
