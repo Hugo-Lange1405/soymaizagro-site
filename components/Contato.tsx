@@ -1,17 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import { MessageCircle, Mail, MapPin, Send } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import SectionTag from './SectionTag'
 import RevealWrapper from './RevealWrapper'
 
 const channels = [
-  {
-    icon: <MessageCircle size={18} />,
-    label: 'WhatsApp',
-    value: '(34) 99928-2714',
-    href: 'https://wa.me/5534999282714',
-  },
   {
     icon: <Mail size={18} />,
     label: 'E-mail',
@@ -33,34 +26,6 @@ const channels = [
 ]
 
 export default function Contato() {
-  const [form, setForm] = useState({
-    name: '',
-    phone: '',
-    interest: '',
-    message: '',
-  })
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
-
-  const sendWA = () => {
-    const text = [
-      `Olá! Meu nome é ${form.name || 'Visitante'}.`,
-      `Interesse: ${form.interest || 'Informações gerais'}`,
-      form.phone ? `Telefone: ${form.phone}` : '',
-      form.message ? `Mensagem: ${form.message}` : '',
-    ]
-      .filter(Boolean)
-      .join('\n')
-    window.open(`https://wa.me/5534999282714?text=${encodeURIComponent(text)}`, '_blank')
-  }
-
-  const inputClass =
-    'form-input w-full bg-white/[0.04] border border-white/[0.08] rounded-[3px] px-4 py-3 font-body text-[0.88rem] text-cream transition-all duration-300 outline-none appearance-none'
-
   return (
     <section
       id="contato"
@@ -126,97 +91,6 @@ export default function Contato() {
                 </div>
               )
             })}
-          </div>
-        </RevealWrapper>
-
-        {/* Right — Form */}
-        <RevealWrapper delay={0.2}>
-          <div className="relative bg-white/[0.03] border border-green-brand/14 rounded-[4px] p-10 overflow-hidden">
-            {/* Top accent */}
-            <div
-              className="absolute top-0 left-0 right-0 h-0.5"
-              style={{ background: 'linear-gradient(90deg, #3BAA2A, transparent)' }}
-            />
-
-            <h3 className="font-display text-[1.6rem] font-light mb-1">
-              Envie uma mensagem
-            </h3>
-            <p className="text-[0.82rem] text-cream/38 mb-8">
-              Resposta em até 2 horas úteis
-            </p>
-
-            <div className="space-y-5">
-              <div>
-                <label className="block text-[0.7rem] tracking-[0.14em] uppercase text-cream/38 font-medium mb-2">
-                  Nome completo
-                </label>
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Seu nome"
-                  value={form.name}
-                  onChange={handleChange}
-                  className={inputClass}
-                />
-              </div>
-
-              <div>
-                <label className="block text-[0.7rem] tracking-[0.14em] uppercase text-cream/38 font-medium mb-2">
-                  Telefone / WhatsApp
-                </label>
-                <input
-                  name="phone"
-                  type="tel"
-                  placeholder="(xx) xxxxx-xxxx"
-                  value={form.phone}
-                  onChange={handleChange}
-                  className={inputClass}
-                />
-              </div>
-
-              <div>
-                <label className="block text-[0.7rem] tracking-[0.14em] uppercase text-cream/38 font-medium mb-2">
-                  Interesse
-                </label>
-                <select
-                  name="interest"
-                  value={form.interest}
-                  onChange={handleChange}
-                  className={inputClass}
-                  style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}
-                >
-                  <option className="text-black">Selecione o assunto</option>
-                  <option className="text-black">Comercialização de Soja</option>
-                  <option className="text-black">Comercialização de Milho</option>
-                  <option className="text-black">Comercialização de Sorgo</option>
-                  <option className="text-black">Receber Boletim de Mercado</option>
-                  <option className="text-black">Análise de Mercado</option>
-                  <option className="text-black">Outros</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-[0.7rem] tracking-[0.14em] uppercase text-cream/38 font-medium mb-2">
-                  Mensagem
-                </label>
-                <textarea
-                  name="message"
-                  placeholder="Conte um pouco sobre sua operação ou dúvida..."
-                  value={form.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className={`${inputClass} resize-y`}
-                />
-              </div>
-
-              <button
-                onClick={sendWA}
-                className="w-full flex items-center justify-center gap-2.5 bg-green-brand text-cream text-[0.78rem] font-semibold tracking-[0.12em] uppercase px-8 py-4 rounded-[3px] transition-all duration-300 hover:bg-green-dark hover:-translate-y-px hover:shadow-[0_12px_40px_rgba(59,170,42,0.35)]"
-              >
-                <Send size={16} />
-                Enviar pelo WhatsApp
-              </button>
-            </div>
           </div>
         </RevealWrapper>
       </div>
