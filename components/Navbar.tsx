@@ -109,34 +109,6 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
-
-          {/* Divider */}
-          <div
-            aria-hidden
-            style={{ width: '1px', height: '13px', background: 'rgba(250,250,248,0.09)', flexShrink: 0 }}
-          />
-
-          {/* CTA */}
-          <a
-            href="https://wa.me/5534999282714"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-cta-btn font-body"
-            style={{
-              display: 'inline-block',
-              fontSize: '0.66rem',
-              fontWeight: 600,
-              letterSpacing: '0.13em',
-              textTransform: 'uppercase',
-              textDecoration: 'none',
-              color: '#3BAA2A',
-              border: '1px solid rgba(59,170,42,0.35)',
-              padding: '9px 22px',
-              transition: 'color 0.25s, border-color 0.25s, background 0.25s, box-shadow 0.25s, transform 0.2s',
-            }}
-          >
-            Falar com consultor
-          </a>
         </div>
 
         {/* ── Hamburger ── */}
@@ -224,32 +196,6 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
-
-          {/* Mobile CTA */}
-          <a
-            href="https://wa.me/5534999282714"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
-            className="font-body font-semibold text-center"
-            style={{
-              display: 'block',
-              marginTop: '36px',
-              padding: '17px 0',
-              background: '#3BAA2A',
-              color: '#FAFAF8',
-              fontSize: '0.72rem',
-              fontWeight: 600,
-              letterSpacing: '0.16em',
-              textTransform: 'uppercase',
-              textDecoration: 'none',
-              opacity:   menuOpen ? 1 : 0,
-              transform: menuOpen ? 'translateY(0)' : 'translateY(12px)',
-              transition: `background 0.25s, opacity 0.4s cubic-bezier(0.16,1,0.3,1) ${NAV_LINKS.length * 0.055 + 0.06}s, transform 0.4s cubic-bezier(0.16,1,0.3,1) ${NAV_LINKS.length * 0.055 + 0.06}s`,
-            }}
-          >
-            Falar com consultor
-          </a>
 
           <p
             className="font-body"
